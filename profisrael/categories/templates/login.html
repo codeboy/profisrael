@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход для мастеров</title>
+</head>
+<body>
+  
+    <div class="container pt-5 mt-5">
+    </br>
+      <div class="text-center fw-bolder shadow p-2 mb-1 bg-body rounded w-60">
+      </br>
+      <div style="max-width:420px;">
+        <h3 align="center">Вход для мастеров</h3>
+      </br>
+        <form method="post" enctype="multipart/form-data" id="login">
+          {% csrf_token %}
+          {{ form.as_p }}
+    <button type="submit">Войти</button>
+  </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>  
+
+
+{% endblock %}

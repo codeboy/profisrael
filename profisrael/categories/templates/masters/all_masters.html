@@ -1,0 +1,18 @@
+<!-- all_masters.html -->
+{% extends "base.html" %}
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="container pt-5 mt-5"></div>
+    <h3 align="center"> Все мастера</h3>
+    </br>
+    <div class="list-group text-center fw-bolder shadow p-2 mb-1 bg-body rounded w-60">
+        {% for master in masters %}
+        <a href="{% url 'profile_url' master.id %}">{{ master.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
