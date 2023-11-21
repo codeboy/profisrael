@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <section style="max-width:555px;" class="container pt-5 mt-5">
+    <div class="card mb-4 shadow-lg">
+      <div class="card-body">
+        <div class="d-flex align-items-start align-items-center mb-3 pb-2 border-bottom">
+          <img class="rounded-3" src="{{ master.photo.url }}" alt="{{ master.service_name }} {{ master.name }} {{ master.name }}" width="140">
+          <div class="ps-2 ms-1">
+            <h1 class="h6 mb-2 ml-3">{{ master.name }}<br>{{ master.service_name }}</h1>
+             <p><i class="bi bi-geo-alt"></i>&nbsp;{{ master.city }}</p>
+             <p> {{ master.address }} </p>
+             <p><i class="bi bi-wallet2"></i>&nbsp;{{ master.pricemin|default_if_none:"" }} - {{ master.pricemax|default_if_none:"" }} &#8362;</p>     
+        </div>
+        </div>
+
+        <div class="mb-3 pb-3 border-bottom">
+          {{ master.about|linebreaks }}
+        </div>
+
+        <style>
+            /* Custom CSS for contact buttons */
+            .contact-button {
+              background-color: #25d366;
+              border-color: #25d366;
+          }
+          </style>
+    
+        <div class="mb-3 pb-3 border-bottom">
+          <div class="col">
+            <a class="btn btn-secondary btn-lg rounded-pill w-sm-auto w-100 shadow-lg p-3 mb-3 rounded" href="tel:{{ master.phone }}">
+              Позвонить мастеру &nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-telephone-inbound"></i>
+            </a>
+          </div>
+          <div class="col">
+            <a class="btn contact-button btn-lg rounded-pill w-sm-auto w-100 shadow-lg p-3 mb-2 rounded" href="https://wa.me/{{ master.whatsapp }}">
+              Написать в WhatsApp &nbsp;<i class="bi bi-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <style>
+            .thumbnail {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+            }     
+          </style>
+
+<!-- В коде этой галереи прописать показ всех фото из загруженных в gallery -->
+
+<div class="container gallery-container"> 
+  <h5 class="page-description text-center">Фотогалерея мастера {{ master.name }}</h5>         
+  <div class="tz-gallery">       
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">       
+      {% for image in images %}
+      <div>
+          <a class="lightbox" href="{{ image }}">
+            <img class="thumbnail rounded-3" src="{{ image }}" alt="{{ master.name }} {{ master.city }} {{ master.service }}">
+          </a>
+        </div>
+        {% endfor %}
+        </div>     
+       </div>
+      </div>
+     </div>
+    </div>
+  </section>
+{% endblock %}
