@@ -14,3 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'profisrael.settings')
 
 application = get_wsgi_application()
+
+import importlib
+module_name = 'subpackage.i.import'
+special_module = importlib.import_module(module_name, package=None)
