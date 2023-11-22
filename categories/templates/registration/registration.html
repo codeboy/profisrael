@@ -19,11 +19,11 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Придумайте пароль, который запомните" autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Имя:</label>
+                        <label for="name" class="form-label">Имя (или название салона, фирмы):</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше Имя и желательно Фамилию">
                     </div>
                     <div class="mb-3">
-                        <label for="city" class="form-label">Город:</label>
+                        <label for="city" class="form-label">Город или Online (если нет в списке, ближайший):</label>
                         <select id="city" class="form-select" name="city">
                             <option value="">Выбрать город</option>
                             {% for city in cities %}
@@ -50,15 +50,15 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Телефон:</label>
+                        <label for="phone" class="form-label">Телефон (только Израильский!):</label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="В формате 05X-XXXXXXX">
                     </div>
                     <div class="mb-3">
-                        <label for="whatsapp" class="form-label">WhatsApp:</label>
-                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="В формате 9725XXXXXXXX">
+                        <label for="whatsapp" class="form-label">WhatsApp (в формате 972ХХХХХХХ):</label>
+                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Можно номер другой страны">
                     </div>
                     <div class="mb-3">
-                        <label for="instagram" class="form-label">Instagram:</label>
+                        <label for="instagram" class="form-label">Instagram (продвигаем в нашей группе):</label>
                         <input type="text" class="form-control" id="instagram" name="instagram" placeholder="Просто id, не ссылку">
                     </div>
                     <div class="mb-3">
@@ -66,7 +66,7 @@
                         <input type="text" class="form-control" id="service_name" name="service_name" placeholder="Полное название вашей услуги">
                     </div>
                     <div class="mb-3">
-                        <label for="pricemin" class="form-label">Цена от:</label>
+                        <label for="pricemin" class="form-label">Цена от (обязательно):</label>
                         <input type="text" class="form-control" id="pricemin" name="pricemin" placeholder="Клиенты обращают на это внимание">
                     </div>
                     <div class="mb-3">
@@ -78,7 +78,7 @@
                         <input type="text" class="form-control" id="address" name="address" placeholder="Адрес где оказывается услуга">
                     </div>
                     <div class="mb-3">
-                        <label for="languages" class="form-label">Языки помимо ru:</label>
+                        <label for="languages" class="form-label">Языки помимо русского:</label>
                         <input type="text" class="form-control" id="languages" name="languages" placeholder="Может иврит или английский">
                     </div>
 
@@ -93,7 +93,7 @@
                         <textarea class="form-control" id="about" name="about" placeholder="Введите описание вашей услуги в это поле. Чем подробнее, тем лучше... Анкеты без описания услуг не вызывают у посетителей доверие и выглядят незавершенными) Надеемся, что все поля выше вы заполнили полностью ;)"></textarea>
                     </div> 
                     <div class="mb-3">
-                        <label for="photo" class="form-label">Ваше фото:</label>
+                        <label for="photo" class="form-label">Ваше фото (портрет):</label>
                         <input type="file" class="form-control" id="photo" name="photo" onchange="previewImage(event, 'imagePreview1')">
                         <img class="rounded-3" id="imagePreview1" src="#" alt="Превью фото" style="max-width: 200px; max-height: 200px; display: none;">
                         <button type="button" class="btn btn-secondary mt-1 btn-sm" onclick="clearPhotoPreview('imagePreview1')">Удалить выбор</button>
