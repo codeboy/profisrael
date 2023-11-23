@@ -12,15 +12,15 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Введите ваш Email" autocomplete="off">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Введите ваш Email" autocomplete="off" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Придумайте пароль, который запомните" autocomplete="off">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Придумайте пароль, который запомните" autocomplete="off" required>
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Имя (или название салона, фирмы):</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше Имя и желательно Фамилию">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше Имя и желательно Фамилию" required>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">Город или Online (если нет в списке, ближайший):</label>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Телефон (только Израильский!):</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="В формате 05X-XXXXXXX">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="В формате 05X-XXXXXXX" required>
                     </div>
                     <div class="mb-3">
                         <label for="whatsapp" class="form-label">WhatsApp (в формате 972ХХХХХХХ):</label>
@@ -63,11 +63,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="service_name" class="form-label">Название вашей услуги:</label>
-                        <input type="text" class="form-control" id="service_name" name="service_name" placeholder="Полное название вашей услуги">
+                        <input type="text" class="form-control" id="service_name" name="service_name" placeholder="Полное название вашей услуги" required>
                     </div>
                     <div class="mb-3">
                         <label for="pricemin" class="form-label">Цена от (обязательно):</label>
-                        <input type="text" class="form-control" id="pricemin" name="pricemin" placeholder="Клиенты обращают на это внимание">
+                        <input type="text" class="form-control" id="pricemin" name="pricemin" placeholder="Клиенты обращают на это внимание" required>
                     </div>
                     <div class="mb-3">
                         <label for="pricemax" class="form-label">Цена до:</label>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Адрес:</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Адрес где оказывается услуга">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Адрес где оказывается услуга" required>
                     </div>
                     <div class="mb-3">
                         <label for="languages" class="form-label">Языки помимо русского:</label>
@@ -90,11 +90,11 @@
                     </style>
                     <div class="mb-3">
                         <label for="about" class="form-label">Описание:</label>
-                        <textarea class="form-control" id="about" name="about" placeholder="Введите описание вашей услуги в это поле. Чем подробнее, тем лучше... Анкеты без описания услуг не вызывают у посетителей доверие и выглядят незавершенными) Надеемся, что все поля выше вы заполнили полностью ;)"></textarea>
+                        <textarea class="form-control" id="about" name="about" placeholder="Введите описание вашей услуги в это поле. Чем подробнее, тем лучше... Анкеты без описания услуг не вызывают у посетителей доверие и выглядят незавершенными) Надеемся, что все поля выше вы заполнили полностью ;)" required></textarea>
                     </div> 
                     <div class="mb-3">
                         <label for="photo" class="form-label">Ваше фото (портрет):</label>
-                        <input type="file" class="form-control" id="photo" name="photo" onchange="previewImage(event, 'imagePreview1')">
+                        <input type="file" class="form-control" id="photo" name="photo" onchange="previewImage(event, 'imagePreview1')" required>
                         <img class="rounded-3" id="imagePreview1" src="#" alt="Превью фото" style="max-width: 200px; max-height: 200px; display: none;">
                         <button type="button" class="btn btn-secondary mt-1 btn-sm" onclick="clearPhotoPreview('imagePreview1')">Удалить выбор</button>
                     </div>
@@ -106,7 +106,7 @@
                     </div>
                     
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="okCheckbox">
+                        <input type="checkbox" class="form-check-input" id="okCheckbox"  required>
                         <label class="form-check-label" for="okCheckbox">Я подтверждаю, что я молодец и ответственно подошел к заполнению своей анкеты и заполнил все поля!</label>
                     </div>
                     
